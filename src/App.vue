@@ -1,7 +1,5 @@
 <template>
   <div id="app">
-    <!-- <img alt="Vue logo" src="./assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />-->
     <editor 
     @change="editorContentChange"
     @focus="editorFocus"
@@ -11,13 +9,11 @@
 </template>
 
 <script>
-// import HelloWorld from "./components/HelloWorld.vue";
 import editor from "@/components/editor.vue";
 
 export default {
   name: "App",
   components: {
-    // HelloWorld,
     editor
   },
   data() {

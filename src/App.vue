@@ -1,17 +1,40 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <!-- <img alt="Vue logo" src="./assets/logo.png" />
+    <HelloWorld msg="Welcome to Your Vue.js App" />-->
+    <editor 
+    @change="editorContentChange"
+    @focus="editorFocus"
+    @blur='editorBlur'
+    ></editor>
   </div>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
+// import HelloWorld from "./components/HelloWorld.vue";
+import editor from "@/components/editor.vue";
 
 export default {
   name: "App",
   components: {
-    HelloWorld
+    // HelloWorld,
+    editor
+  },
+  data() {
+    return {};
+  },
+  methods: {
+    editorContentChange(contents) {
+      console.log(contents);
+    },
+    
+    editorFocus(){
+      console.log('focus')
+    },
+
+    editorBlur(){
+      console.log('blur')
+    }
   }
 };
 </script>
@@ -21,8 +44,10 @@ export default {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
+  /* text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  margin-top: 60px; */
+  font-size: 14px;
+  color: #000000;
 }
 </style>
